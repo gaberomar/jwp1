@@ -1,0 +1,96 @@
+﻿<script type="bd8ef533d50b6a5dc9cdbfd2-text/javascript">
+function getParam ( sname )
+{
+  var params = location.search.substr(location.search.indexOf("?")+1);
+  var sval =  params.replace("sv=", "");
+  
+  return sval;
+}
+var sv = getParam("sv");
+
+</script>
+<script>
+function vlcplay(b){if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){window.location=b}else{location.href="intent:"+b+"#Intent;package=org.videolan.vlc;S.title=elahmad.com;type=video/mp4;end"}};
+function maxplay(b){if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){window.location=b}else{location.href="intent:"+b+"#Intent;package=com.mxtech.videoplayer.ad;type=video/mp4;end"}};
+function maxplay_pro(b){if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){window.location=b}else{location.href="intent:"+b+"#Intent;package=com.mxtech.videoplayer.pro;type=video/mp4;end"}};
+function extplay(a){if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){window.location=a}else{location.href="intent://"+a+"#Intent;action=android.intent.action.VIEW;scheme=http;type=video/*;end"}};
+function intent(b){if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){window.location=b}else{location.href="intent:"+b+"#Intent;action=android.intent.action.VIEW;scheme=http;type=video/mp4;end"}};
+function wuffy(b){if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){window.location=b}else{location.href="intent://"+b+"#Intent;scheme=xmtv;package=co.wuffy.player;end"}};
+
+</script>
+<div id="container">
+</div>
+<script src="http://jawaltv.com/flsh/FPaut/jwplayer.js" type="bd8ef533d50b6a5dc9cdbfd2-text/javascript"></script>
+<script type="bd8ef533d50b6a5dc9cdbfd2-text/javascript">jwplayer.key = "WbtWzGvcRNi6Tk+gtKldIbx+nn6lXZFvKiaO2g=="</script>
+<script type="bd8ef533d50b6a5dc9cdbfd2-text/javascript">
+  jwplayer.key="WbtWzGvcRNi6Tk+gtKldIbx+nn6lXZFvKiaO2g==";
+  var responseText = sv;
+  urlArry = responseText.split(',');
+  start = true;
+  num_of_urlArry = urlArry.length;
+  index_of_urlArry = 0;
+</script>
+<div id="player" style="height: 100%; width: 100%;">
+<div id="main-video">
+</div>
+<script type="bd8ef533d50b6a5dc9cdbfd2-text/javascript">
+ if (navigator.userAgent.match(/Android/i) ||
+             navigator.userAgent.match(/webOS/i) ||
+             navigator.userAgent.match(/iPhone/i) ||
+             navigator.userAgent.match(/iPod/i) ||
+             navigator.userAgent.match(/iPad/i) ||
+             navigator.userAgent.match(/Blackberry/i)){
+    document.write("\<video style=\"z-index:2;width:100%;width:100%;height:100%;background-color:#000;-o-object-fit:fill;object-fit:fill\"  controls=\"controls\" autoplay=\"true\" preload=\"auto\" height=\"auto\" src=\""+urlArry[0]+"\"\>\<\/video\>");
+    }else{
+    jwplayer("main-video").setup({    
+                 playlist: [{
+                file: urlArry[0], 
+               type:'hls',
+                      title: " كوره جي لايف",
+               }],
+    width: '100%',
+    height: '100%',
+    autostart: true,
+
+      events: {
+       onError : function (event) {
+        if(start == true)
+        {
+         index_of_urlArry = index_of_urlArry + 1;
+         
+         if(index_of_urlArry <= num_of_urlArry){
+          reLoad(urlArry[index_of_urlArry]);
+         }
+
+ } else{ reLoad(urlArry[index_of_urlArry]);}},
+       onBuffer: function (event){
+        playing = false;
+        setTimeout(function(){
+         if(playing == false){
+          if(start == true){
+           index_of_urlArry = index_of_urlArry + 1;
+         
+           if(index_of_urlArry <= num_of_urlArry){
+            reLoad(urlArry[index_of_urlArry]);
+           }
+          }else{
+           reLoad(urlArry[index_of_urlArry]);
+          }
+         }
+        },20000);
+        
+       },
+       onPlay: function (event){
+        start = false;
+        playing = true;
+        
+       }
+      }
+     });
+}
+    </script>
+
+<span style="background: transparent; box-sizing: border-box; color: white; font-size: 10px; font-weight: bold; height: 38px; padding: 0px 5px; position: absolute; right: 60px; top: 400px; width: 70px;"></span><img src="http://4.bp.blogspot.com/-34SPx0qzBko/XV2tEcLbiVI/AAAAAAAAID8/H9j9Vrfo1jEVSq8xyWQgPvowGHt94SYvwCK4BGAYYCw/s1600/logo1.png" pagespeed_url_hash="b8e6b5a44e2403b" style="border: none; box-sizing: border-box; height: 30px; padding: 0px; position: absolute; right: 15px; top: 20px; vertical-align: middle; width: 90px;" />
+
+<script data-cf-settings="bd8ef533d50b6a5dc9cdbfd2-|49" defer="" src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js"></script>
+
