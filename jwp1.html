@@ -1,0 +1,106 @@
+﻿
+<script type="bd8ef533d50b6a5dc9cdbfd2-text/javascript">
+function getParam ( sname )
+{
+  var params = location.search.substr(location.search.indexOf("?")+1);
+  var sval =  params.replace("sv=", "");
+  
+  return sval;
+}
+var sv = getParam("sv");
+
+</script>
+<div data-src="" id="phoenix_video_test">
+</div>
+
+<div id="container">
+</div>
+
+<script data-cfasync='false' src="https://jwpsrv.com/library/SakQCEfSEeOHhRIxOQfUww.js"></script>
+<script data-cfasync='false' src="https://www-tst.spott.tv/react-player/js/spott-tst.jwplayer.js" /></script>
+<script type="bd8ef533d50b6a5dc9cdbfd2-text/javascript">jwplayer.key = "WbtWzGvcRNi6Tk+gtKldIbx+nn6lXZFvKiaO2g=="</script>
+<script type="bd8ef533d50b6a5dc9cdbfd2-text/javascript">
+  jwplayer.key="WbtWzGvcRNi6Tk+gtKldIbx+nn6lXZFvKiaO2g==";
+  var responseText = sv;
+  urlArry = responseText.split(',');
+  start = true;
+  num_of_urlArry = urlArry.length;
+  index_of_urlArry = 0;
+</script>
+<div id="main-video" style="height: 100%; width: 100%;">
+<div id="main-video">
+</div>
+<script type="bd8ef533d50b6a5dc9cdbfd2-text/javascript">
+ if (navigator.userAgent.match(/Android/i) ||
+             navigator.userAgent.match(/webOS/i) ||
+             navigator.userAgent.match(/iPhone/i) ||
+             navigator.userAgent.match(/iPod/i) ||
+             navigator.userAgent.match(/iPad/i) ||
+             navigator.userAgent.match(/Blackberry/i)){
+    document.write("\<video style=\"z-index:2;width:100%;width:100%;height:100%;background-color:#000;-o-object-fit:fill;object-fit:fill\"  controls=\"controls\" autoplay=\"true\" preload=\"auto\" height=\"auto\" src=\""+urlArry[0]+"\"\>\<\/video\>");
+    }else{
+    jwplayer("main-video").setup({    
+                 playlist: [{
+                file: urlArry[0], 
+               type:'hls',
+                      title: "كوره جي لايف",
+               }],
+    width: '100%',
+    height: '100%',
+    autostart: true,
+
+      events: {
+       onError : function (event) {
+        if(start == true)
+        {
+         index_of_urlArry = index_of_urlArry + 1;
+         
+         if(index_of_urlArry <= num_of_urlArry){
+          reLoad(urlArry[index_of_urlArry]);
+         }
+
+ } else{ reLoad(urlArry[index_of_urlArry]);}},
+       onBuffer: function (event){
+        playing = false;
+        setTimeout(function(){
+         if(playing == false){
+          if(start == true){
+           index_of_urlArry = index_of_urlArry + 1;
+         
+           if(index_of_urlArry <= num_of_urlArry){
+            reLoad(urlArry[index_of_urlArry]);
+           }
+          }else{
+           reLoad(urlArry[index_of_urlArry]);
+          }
+         }
+        },20000);
+        
+       },
+       onPlay: function (event){
+        start = false;
+        playing = true;
+        
+       }
+      }
+     });
+}
+    </script>
+<style>
+.jw-rightclick ul{display:none;}
+.jw-background-color {
+background-color: transparent !important;
+background-image: -webkit-linear-gradient(top,rgba(255,255,255,0) 1%,rgb(7, 76, 78) 100%)!important;
+}
+.jw-button-color {
+color: hsl(47, 100%, 50%) !important;
+}
+.jwplayer.jw-state-playing .jw-display-icon-container{
+background: none !important;
+}
+</style>
+<span style="background: transparent; box-sizing: border-box; color: white; font-size: 10px; font-weight: bold; height: 38px; padding: 0px 5px; position: absolute; right: 60px; top: 400px; width: 70px;"></span>
+<img pagespeed_url_hash="b8e6b5a44e2403b" src="https://4.bp.blogspot.com/-34SPx0qzBko/XV2tEcLbiVI/AAAAAAAAID8/H9j9Vrfo1jEVSq8xyWQgPvowGHt94SYvwCK4BGAYYCw/s1600/logo1.png" style="border: none; box-sizing: border-box; height: 30px; padding: 0px; position: absolute; right: 15px; top: 20px; vertical-align: middle; width: 90px;" />
+<script data-cf-settings="bd8ef533d50b6a5dc9cdbfd2-|49" defer="" src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js"></script>
+
+<script async src='/cdn-cgi/bm/cv/2172558837/api.js'></script><script type="text/javascript">(function(){window['__CF$cv$params']={r:'5b53cb25f940e8f7',m:'b77f8b6c650f5724633d6e5d9635ef848d17eaf6-1595154904-1800-ATofE7FWDpv6mcMslfmOE8IbFjFlnG5WvfD4DdId3vBw5wvm5BcSvVP/IJ2x94Bwkd+jeUGWasUJKeDYMK8ZRnyJFbYetWCVQBS3w3vNvDcp/eCaIy8ZeytVq8sXW2zow6S/S5QBIDp+Zp8VfBGDNBc=',s:[0xa5ce49a01b,0x66d926ed34],}})();</script>
